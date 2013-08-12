@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="PayerEssenceWebservice" targetNamespace="http://wsProject.project.md.the/" xmlns:ns1="http://wsProject.project.md.the/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsProject.project.md.the/" elementFormDefault="unqualified" targetNamespace="http://wsProject.project.md.the/" version="1.0">
+<xs:element name="checkTransaction" type="tns:checkTransaction"/>
+<xs:element name="checkTransactionResponse" type="tns:checkTransactionResponse"/>
+<xs:complexType name="checkTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cardNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="price" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="checkTransactionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="checkTransaction">
+    <wsdl:part name="parameters" element="ns1:checkTransaction">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkTransactionResponse">
+    <wsdl:part name="parameters" element="ns1:checkTransactionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PayerEssenceWebservice">
+    <wsdl:operation name="checkTransaction">
+      <wsdl:input name="checkTransaction" message="ns1:checkTransaction">
+    </wsdl:input>
+      <wsdl:output name="checkTransactionResponse" message="ns1:checkTransactionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

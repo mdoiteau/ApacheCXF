@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="PayerEssenceWebserviceImplService" targetNamespace="http://impl.wsProject.project.md.the/" xmlns:ns1="http://wsProject.project.md.the/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://impl.wsProject.project.md.the/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:import namespace="http://wsProject.project.md.the/" location="PayerEssenceWebservice.wsdl">
+    </wsdl:import>
+  <wsdl:binding name="PayerEssenceWebserviceImplServiceSoapBinding" type="ns1:PayerEssenceWebservice">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="checkTransaction">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="checkTransaction">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkTransactionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PayerEssenceWebserviceImplService">
+    <wsdl:port name="PayerEssenceWebserviceImplPort" binding="tns:PayerEssenceWebserviceImplServiceSoapBinding">
+      <soap:address location="http://localhost:8090/payerEssenceWebService/payerEssence"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
