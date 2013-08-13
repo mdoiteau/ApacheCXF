@@ -19,7 +19,7 @@ public class PayerEssenceClientConsumer {
 	}
 
 	/**
-	 * Lanceur
+	 * Lanceur du test du webservice
 	 * @param args arguments du lanceur
 	 */
 	public static void main(String args[]) {
